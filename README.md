@@ -50,3 +50,43 @@
     # On Windows
     py -m ensurepip --upgrade
 
+# 虚拟环境问题
+    1.安装虚拟环境
+    pip install virtualenv
+
+    2.创建虚拟环境  以及指定版本去创建
+    virtualenv -p /usr/bin/python3.9 env_adhd   指定版本
+
+    python3.9 -m venv /opt/asd_vr_env
+
+
+    3.激活虚拟环境
+    source ./bin/active
+    4.退出虚拟环境
+    deactivate
+
+    # 更新pip版本
+    python -m pip install --upgrade pip
+
+
+    pip install -r requirements.txt
+    豆瓣源
+   https://pypi.douban.com/simple/ scrapy
+
+# nginx tips
+     1.nginx 重启后有可能出现80端口被占用
+      fuser -k 80/tcp
+    2.修改了nginx文件后有可能出现 /run/nginx.pid 错误
+      nginx -c /etc/nginx/nginx.conf 
+    3.pip freeze > requirements.txt 出现一些路径问题
+    使用 pip list --format=freeze > requirements.txt
+    4.查看端口号是否被占用
+    netstat -anp | grep 端口号
+    查看端口号是否被占用
+    5. fuser -k -n tcp 8080  
+    杀死这个端口下所有
+    6.
+    SET FOREIGN_KEY_CHECKS = 0;   
+    TRUNCATE TABLE 表名;  
+    SET FOREIGN_KEY_CHECKS = 1; 
+
